@@ -2,8 +2,6 @@ import { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
-import Developer from '../components/Developer.jsx';
-import CanvasLoader from '../components/Loading.jsx';
 import { BoardPositions } from '../constants/index.js';
 import { useNavigate } from 'react-router-dom';
 
