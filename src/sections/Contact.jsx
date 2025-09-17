@@ -26,9 +26,9 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: 'JavaScript Mastery',
+          to_name: 'WCE ACSES',
           from_email: form.email,
-          to_email: 'sujata@jsmastery.pro',
+          to_email: 'wceacses1995@gmail.com',
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
@@ -44,12 +44,8 @@ const Contact = () => {
 
           setTimeout(() => {
             hideAlert(false);
-            setForm({
-              name: '',
-              email: '',
-              message: '',
-            });
-          }, [3000]);
+            setForm({ name: '', email: '', message: '' });
+          }, 3000);
         },
         (error) => {
           setLoading(false);
@@ -65,65 +61,72 @@ const Contact = () => {
   };
 
   return (
-    <section className="c-space" id="contact">
+    <section className="c-space py-12 px-4 sm:px-6 flex flex-col" id="contact">
       {alert.show && <Alert {...alert} />}
-     <div className="relative min-h-screen flex items-center justify-center flex-col overflow-hidden">
 
-        
-        <div className="contact-container">
-          <h3 className="head-text">Let's talk</h3>
-          <p className="text-lg text-white-600 mt-3">
-            Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
-            life, I’m here to help.
-          </p>
+      {/* Title */}
+      <p
+        className="text-2xl sm:text-3xl md:text-[2.8rem] font-extrabold text-center text-[#c0d8ff] mb-8 sm:mb-12
+         [text-shadow:0_0_10px_#7f5af0,0_0_20px_#00dfff,0_0_30px_#7f5af0]">
+        Contact Us
+      </p>
 
-          <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
-            <label className="space-y-3">
-              <span className="field-label">Full Name</span>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                required
-                className="field-input"
-                placeholder="ex., John Doe"
-              />
-            </label>
+      {/* Card */}
+      <div className="w-full sm:w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 border border-[#48387f] mx-auto rounded-2xl bg-[#221944] shadow-lg shadow-black/40 p-6 sm:p-8 md:p-10">
+        <h3 className="text-2xl sm:text-3xl font-bold text-white text-center">Let's Talk</h3>
+        <p className="text-center text-[#b3b3cc] mt-2 text-sm sm:text-base">
+          Fill out the form below and I’ll get back to you as soon as possible.
+        </p>
 
-            <label className="space-y-3">
-              <span className="field-label">Email address</span>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                required
-                className="field-input"
-                placeholder="ex., johndoe@gmail.com"
-              />
-            </label>
+        {/* Form */}
+        <form ref={formRef} onSubmit={handleSubmit} className="mt-8 sm:mt-10 flex flex-col gap-6">
+          <div className="flex flex-col">
+            <label className="text-[#b3b3cc] font-medium mb-2 text-sm sm:text-base">Full Name</label>
+            <input
+              type="text"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              required
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-[#221944] text-white border border-[#3a3a4d] placeholder-[#777799] focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/40 outline-none transition text-sm sm:text-base"
+              placeholder="ex., John Doe"
+            />
+          </div>
 
-            <label className="space-y-3">
-              <span className="field-label">Your message</span>
-              <textarea
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="field-input"
-                placeholder="Share your thoughts or inquiries..."
-              />
-            </label>
+          <div className="flex flex-col">
+            <label className="text-[#b3b3cc] font-medium mb-2 text-sm sm:text-base">Email Address</label>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              required
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-[#221944] text-white border border-[#3a3a4d] placeholder-[#777799] focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/40 outline-none transition text-sm sm:text-base"
+              placeholder="ex., johndoe@gmail.com"
+            />
+          </div>
 
-            <button className="field-btn" type="submit" disabled={loading}>
-              {loading ? 'Sending...' : 'Send Message'}
+          <div className="flex flex-col">
+            <label className="text-[#b3b3cc] font-medium mb-2 text-sm sm:text-base">Your Message</label>
+            <textarea
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              required
+              rows={4}
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-[#221944] text-white border border-[#3a3a4d] placeholder-[#777799] focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/40 outline-none transition text-sm sm:text-base"
+              placeholder="Share your thoughts or inquiries..."
+            />
+          </div>
 
-              <img src="/assets/arrow-up.png" alt="arrow-up" className="field-btn_arrow" />
-            </button>
-          </form>
-        </div>
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 sm:py-3 rounded-lg disabled:opacity-60 transition-all text-sm sm:text-base">
+            {loading ? 'Sending...' : 'Send Message'}
+            <img src="/assets/arrow-up.png" alt="arrow-up" className="w-4 h-4 sm:w-5 sm:h-5" />
+          </button>
+        </form>
       </div>
     </section>
   );

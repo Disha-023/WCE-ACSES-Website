@@ -26,7 +26,7 @@ const Home = () => {
       ></div>
 
       {/* Main Content */}
-      <main className="relative z-10 max-w-7xl mx-auto px-4">
+      <main className="relative z-10 max-w-7xl mx-auto px-4 py-4  ">
         <Navbar />
         <Hero />
         <About />

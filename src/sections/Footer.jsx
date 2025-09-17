@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer
       className="c-space pt-7 pb-5 mt-10 border-t border-[rgba(127,90,240,0.3)] flex flex-col md:flex-row justify-between items-center gap-5 
-                       backdrop-blur-2xl bg-[rgba(20,20,40,0.6)] rounded-t-xl">
+                       backdrop-blur-2xl bg-[rgba(20,20,40,0.6)] rounded-xl">
       {/* Address */}
       <div className="text-white-400 flex flex-col gap-1 text-center md:text-left">
         <p>Walchand College Of Engineering, Vishrambag</p>
